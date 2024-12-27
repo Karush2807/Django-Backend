@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "api.apps.ApiConfig",
-    "rest_framework"
+    "rest_framework",
+    "frontend.apps.FrontendConfig"
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,9 @@ ROOT_URLCONF = "music_controller.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        'DIRS': [
+            BASE_DIR / 'music_controller/frontend/templates',  # Make sure this path includes the directory where index.html is located
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
